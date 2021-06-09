@@ -1,0 +1,359 @@
+:root {
+    --myViolet: rgb(136, 9, 255);
+    --myWhite: rgb(218, 179, 255);
+    --myGrey: rgb(70, 70, 70);
+    --myV: #5c00b3;
+    --Pseudo_green: #64ffda;
+}
+
+html {
+    font-size: 16px;
+}
+
+@font-face {
+    font-family: dancing;
+    src: url(./resourses/Fonts/DancingScript-VariableFont_wght.ttf);
+}
+
+@font-face {
+    font-family: poppins;
+    src: url(./resourses/Fonts/Poppins-Regular.ttf);
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--myViolet);
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+header {
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    align-self: flex-start;
+    width: 90vw;
+}
+
+.logo img {
+    height: 8vh;
+    width: 8rem;
+    float: left;
+}
+
+.nav-btn {
+    padding: 6px;
+    align-self: center;
+}
+
+main {
+    width: 90vw;
+    height: 80vh;
+    box-shadow: -2px -2px 20px, 5px 5px 20px;
+    display: flex;
+}
+
+.bg {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 45vw;
+    height: 80vh;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+}
+
+.left {
+    background-image: url(./resourses/bg_left.jpg);
+    left: 5vw;
+    padding: 3vh 3vw;
+    overflow-y: scroll;
+    opacity: 1;
+    transition: all 2s;
+}
+
+.left::-webkit-scrollbar {
+    width: 2px;
+    background-color: none;
+}
+
+.right {
+    background-image: url(./resourses/bg_right.jpg);
+    align-items: center;
+    justify-content: center;
+    right: 5vw;
+    opacity: 1;
+    transition: all 2s;
+}
+
+.profile {
+    width: 180px;
+    height: 240px;
+    margin: 40px 0;
+    border: 4px var(--myV) solid;
+    border-radius: 4px;
+}
+
+.profile img {
+    width: 180px;
+    height: 240px;
+    border-radius: 4px;
+    margin: 10px 0 0 10px;
+    transition: all 500ms;
+    box-shadow: -5px -5px 5px var(--myViolet);
+}
+
+.profile img:hover {
+    margin: 0;
+}
+
+.intro {
+    color: var(--myViolet);
+    font-family: dancing;
+}
+
+.intro h1 {
+    color: var(--myWhite);
+    margin: 5px 0;
+}
+
+.intro h2 {
+    font-family: poppins;
+    font-weight: 100;
+}
+
+.intro h3 {
+    color: rgb(159, 135, 173);
+    font-family: poppins;
+}
+
+.right button {
+    background-color: var(--myWhite);
+    font-size: 32px;
+    padding: 5px 10px;
+    font-weight: 600;
+    box-shadow: 2px 2px 10px var(--myViolet), -2px -2px 10px var(--myViolet);
+    border: none;
+    border-radius: 3px;
+    transition: all 500ms;
+}
+
+.right button:hover {
+    color: var(--myViolet);
+    background-color: black;
+    box-shadow: 3px 3px 10px var(--myWhite), -3px -3px 10px var(--myWhite);
+}
+
+.right button::after {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    content: "\f061";
+    display: inline-block;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    padding: 5px;
+    color: var(--myViolet);
+}
+
+
+/* behind */
+
+.behind {
+    overflow-y: scroll;
+    width: 45vw;
+    height: 80vh;
+    display: flex;
+    padding: 10px 0;
+    flex-direction: column;
+    background-image: linear-gradient(var(--myWhite), var(--myViolet));
+}
+
+.info {
+    box-sizing: border-box;
+    width: auto;
+    font-size: 2vw;
+    margin: 2vh 3vw;
+    font-family: poppins;
+    max-height: fit-content;
+    padding: 10px;
+}
+
+.behind::-webkit-scrollbar {
+    width: 5px;
+    background-color: rgba(142, 67, 241, 0.315);
+}
+
+.behind::-webkit-scrollbar-thumb {
+    background-color: rgba(199, 107, 245, 0.452);
+}
+
+.info h1 {
+    font-family: dancing;
+}
+
+.info h3 {
+    color: #9125f7;
+}
+
+.info h1 {
+    color: var(--myV);
+}
+
+.info p {
+    min-width: 300px;
+    font-size: 1vw;
+    margin: 20px 0;
+    font-weight: 900;
+}
+
+.info button {
+    background-color: black;
+    font-size: 2vw;
+    color: var(--myViolet);
+    padding: 10px 15px;
+    margin: 20px 0;
+    border: solid black 2px;
+    border-radius: 2px;
+    transition: all 1s;
+}
+
+.info button:hover {
+    background-color: var(--myViolet);
+    color: black;
+    box-shadow: 3px 3px 10px var(--myV), -3px -3px 10px var(--myV);
+}
+
+.panel {
+    height: 60vh;
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    margin: 45px auto;
+    align-self: center;
+    align-items: center;
+    justify-content: center;
+}
+
+.panel .btn {
+    margin: 20px auto;
+    text-align: left;
+    background-image: linear-gradient(var(--myWhite), var(--myViolet));
+    border: none;
+    padding: 10px 10px;
+    border-radius: 4px;
+    font-weight: 500;
+    font-size: 20px;
+    width: 250px;
+}
+
+.panel .skill:before,
+.panel .work:before,
+.panel .services:before,
+.panel .Learn:before,
+.panel .Contact:before {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    content: "\f359";
+    display: inline-block;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    margin: 0 5px;
+    position: relative;
+    right: 0;
+    transition: all 1s;
+}
+
+.panel .btn:hover::before {
+    right: 50px;
+}
+
+#skill,
+#work,
+#services,
+#Learn,
+#Contact {
+    background-image: linear-gradient(45deg, black, var(--myViolet));
+    ;
+    position: absolute;
+    left: -50vw;
+    transition: left 2s;
+}
+
+.active {
+    left: 5vw !important;
+}
+
+.active__btn::before {
+    color: var(--myV);
+    transform: translate(-50px) rotate(180deg);
+}
+
+.close {
+    position: absolute;
+    left: 41vw;
+    top: 4vh;
+}
+
+.content {
+    margin: 2vh 5vw;
+    font-size: 1vw;
+}
+
+.content h2 {
+    background-color: var(--myWhite);
+    font-family: poppins;
+    font-size: 32px;
+    padding: 0 10px;
+}
+
+.content h5 {
+    margin: 20px 0;
+    border-bottom: 1px solid black;
+    width: max-content;
+    padding: 2px;
+    color: var(--myViolet);
+    font-weight: 700;
+    font-size: 24px;
+}
+
+.langs {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.langs span {
+    color: var(--myWhite);
+    font-weight: 900;
+    font-size: 16px;
+    padding: 5px 10px;
+}
+
+.langs span::before {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    content: "\f111";
+    display: inline-block;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    font-size: 10px;
+    padding: 5px;
+    color: var(--myWhite);
+}
