@@ -3,10 +3,15 @@ const right = document.querySelector(".right")
 const btn = document.querySelector(".right button")
 const btns = document.querySelectorAll(".panel .btn")
 
+
 let behinds = document.querySelectorAll(".behind")
 
 
 const close_btns = document.querySelectorAll(".close")
+
+const btnMore = document.getElementById("more")
+const btnPanel = document.querySelector("#m_panel")
+
 
 
 let isClicked = false
@@ -20,31 +25,47 @@ btn.addEventListener("click", () => {
 
 })
 
+const mob_behind = document.querySelectorAll(".mob_fet")
 
-let active = false
-for (let i = 0; i < 6; i++) {
-    if (i !== 5) {
-        btns[i].addEventListener("click", () => {
+if (window.matchMedia("(max-width: 976px)").matches) {
+    const mBtns = document.querySelectorAll("#m_panel button")
 
-            if (!btns[i].classList.contains("active")) {
-                if (active) {
-                    behinds.forEach(el => el.classList.remove("active"))
-                    btns.forEach(el => el.classList.remove("active__btn"))
-                }
-                document.querySelector(":root").style.setProperty("--Pseudo_green", "#64ffda")
-                behinds[i + 1].classList.add("active")
-                btns[i].classList.add("active__btn")
-                active = true
-            } else {
-                behinds[i + 1].classList.remove("active")
-                btns[i].classList.remove("active__btn")
-                active = false
-            }
+    for (let i = 0; i < 5; i++) {
+        mBtns[i].addEventListener("click", (e) => {
+            btnPanel.classList.remove("active__panel")
+            btnMore.style.transform = "rotate3d(0, 1, 0, 0deg)"
+            mob_behind.forEach(item => item.classList.remove("m_active"))
+            mob_behind[i].classList.add("m_active")
         })
     }
 
-}
+} else {
 
+    let active = false
+    for (let i = 0; i < 6; i++) {
+        if (i !== 5) {
+            btns[i].addEventListener("click", () => {
+
+                if (!btns[i].classList.contains("active")) {
+                    if (active) {
+                        behinds.forEach(el => el.classList.remove("active"))
+                        btns.forEach(el => el.classList.remove("active__btn"))
+                    }
+                    document.querySelector(":root").style.setProperty("--Pseudo_green", "#64ffda")
+                    behinds[i + 1].classList.add("active")
+                    btns[i].classList.add("active__btn")
+                    active = true
+                } else {
+                    behinds[i + 1].classList.remove("active")
+                    btns[i].classList.remove("active__btn")
+                    active = false
+                }
+            })
+        }
+
+    }
+
+}
 
 
 close_btns.forEach(btn => {
@@ -78,8 +99,6 @@ if (window.matchMedia("(max-width: 976px)").matches) {
     })
 }
 
-const btnMore = document.getElementById("more")
-const btnPanel = document.querySelector("#m_panel")
 
 btnMore.addEventListener("click", () => {
     if (btnPanel.classList.contains("active__panel")) {
@@ -87,6 +106,7 @@ btnMore.addEventListener("click", () => {
         btnMore.style.transform = "rotate3d(0, 1, 0, 0deg)"
 
     } else {
+        mob_behind.forEach(item => item.classList.remove("m_active"))
         btnPanel.classList.add("active__panel")
         btnMore.style.transform = "rotate3d(0, 1, 0, 180deg)"
 

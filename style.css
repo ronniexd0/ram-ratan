@@ -316,7 +316,7 @@ main {
 }
 
 .content {
-    margin: 2vh 5vw;
+    margin: 2vh 8vw;
     font-size: 1vw;
 }
 
@@ -334,7 +334,7 @@ main {
     padding: 2px;
     color: var(--myViolet);
     font-weight: 700;
-    font-size: 24px;
+    font-size: 22px;
 }
 
 .langs {
